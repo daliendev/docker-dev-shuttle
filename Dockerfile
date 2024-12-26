@@ -12,6 +12,7 @@ RUN useradd -m -s /bin/bash developer && \
 RUN apt-get update && \
     apt-get install -y \
     software-properties-common \
+    openssh-client \
     curl \
     git \
     nodejs \
