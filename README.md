@@ -9,7 +9,7 @@ The purpose of this codebase is to create a consistent and reproducible developm
 ## Features
 
 - **Ubuntu Base Image**: Uses the latest Ubuntu image as the base.
-- **Development Tools**: Installs common development tools such as `curl`, `git`, `sudo`, `nodejs`, `npm`, `php`, and various PHP extensions.
+- **Development Tools**: Installs common development tools such as `curl`, `git`, `nvm`, `nodejs`, `npm`, `php`, and various PHP extensions.
 
 ## Setup Instructions
 
