@@ -16,7 +16,6 @@ RUN apt-get update && \
     openssh-client \
     curl \
     git \
-    sudo \
     build-essential \
     --no-install-recommends && \
     apt-get clean && \
