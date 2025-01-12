@@ -6,7 +6,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV NVM_DIR="/home/developer/.nvm"
 
 # Create a non-root user and add to sudo group
-RUN useradd -m -s /bin/bash developer && \
+RUN apt-get update && \
+    apt-get install -y sudo && \
+    useradd -m -s /bin/bash developer && \
     echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Install common development tools and clean up
