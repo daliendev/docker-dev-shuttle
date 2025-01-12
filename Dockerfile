@@ -5,9 +5,9 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 ENV NVM_DIR="/home/developer/.nvm"
 
-# Create a non-root user
+# Create a non-root user and add to sudo group
 RUN useradd -m -s /bin/bash developer && \
-    echo "developer ALL=(ALL) NOPASSWD: /usr/bin/apt-get" >> /etc/sudoers
+    echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Install common development tools and clean up
 RUN apt-get update && \
@@ -34,11 +34,6 @@ RUN add-apt-repository ppa:ondrej/php && \
     --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-# Install Helix editor
-RUN sudo add-apt-repository ppa:maveonair/helix-editor && \
-    sudo apt update && \
-    sudo apt install -y helix
 
 # Switch to non-root user
 USER developer
