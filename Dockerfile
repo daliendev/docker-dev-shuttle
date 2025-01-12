@@ -35,6 +35,11 @@ RUN add-apt-repository ppa:ondrej/php && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install Helix editor
+RUN sudo add-apt-repository ppa:maveonair/helix-editor && \
+    sudo apt update && \
+    sudo apt install -y helix
+
 # Switch to non-root user
 USER developer
 WORKDIR /home/developer
