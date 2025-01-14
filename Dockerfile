@@ -55,5 +55,8 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | b
 # Set up nvm environment variables
 ENV PATH "$NVM_DIR/versions/node/$(nvm version)/bin:$PATH"
 
+# Set terminal type
+ENV TERM=xterm-256color
+
 # Default command
 CMD ["bash"]
